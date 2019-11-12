@@ -1,0 +1,182 @@
+import 'dart:ui' as prefix0;
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
+
+void main() => runApp(CatPage());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    int _counter = 0;
+    return MaterialApp(
+      darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _counter++;
+            },
+            child: Text('Bid'),
+            splashColor: Colors.purple,
+            shape: RoundedRectangleBorder()),
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+        ),
+        body: Column(
+          children: <Widget>[
+            SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                      radius: 75,
+                      backgroundImage: AssetImage('images/Picho.jpg')),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                    color: Colors.purple,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.phone,
+                          color: Colors.lightBlueAccent,
+                          size: 35,
+                        ),
+                        SizedBox(
+                          width: 10,
+                          height: 40,
+                        ),
+                        Text('(530)604-04646')
+                      ],
+                    ),
+                  ),
+                  Center(
+                    heightFactor: 1,
+                    child: Text(
+                      'Cat For Sale',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        backgroundColor: Colors.lightBlueAccent,
+                        decorationThickness: 2.2,
+                        fontSize: 44,
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ),
+                  Text('$_counter')
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CatPage extends StatefulWidget {
+  @override
+  _CatPageState createState() => _CatPageState();
+}
+
+class _CatPageState extends State<CatPage> {
+  int _counter = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                _counter++;
+              });
+            },
+            child: Text('Bid'),
+            splashColor: Colors.purple,
+            shape: RoundedRectangleBorder()),
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+        ),
+        body: Column(
+          children: <Widget>[
+            SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                      radius: 85,
+                      backgroundImage: AssetImage('images/Picho.jpg')),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                    width: 250,
+                    color: Colors.purple,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.phone,
+                          color: Colors.tealAccent,
+                          size: 47,
+                        ),
+                        SizedBox(
+                          width: 10,
+                          height: 40,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(22.0),
+                          child: Text('(530)604-04646',
+                              style: TextStyle(fontSize: 19)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    heightFactor: 1,
+                    child: Text(
+                      'Cat For Sale',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        backgroundColor: Colors.tealAccent,
+                        decorationThickness: 2.2,
+                        fontSize: 44,
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    '\$$_counter',
+                    style: TextStyle(color: Colors.lightGreen, height: 3),
+                    textScaleFactor: 7,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                    height: 15,
+                    child: SizedBox(
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.gavel,
+                            size: 70,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
